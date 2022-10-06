@@ -24,7 +24,7 @@ import {
           <Stack align={'center'}>
             <Heading fontSize={'4xl'}>Sign in to your account</Heading>
             <Text fontSize={'lg'} color={'gray.600'}>
-              You're going to need an account. <Link color={'blue.400'} href={"/signup"}>Sign Up</Link>
+              You&apos;re going to need an account. <Link color={'blue.400'} href={"/signup"}>Sign Up</Link>
             </Text>
           </Stack>
           <Box
