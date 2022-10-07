@@ -1,8 +1,8 @@
 
 import { Box, Flex, Avatar, HStack, Link, IconButton, Button,
     Menu, MenuButton, MenuList, MenuItem, MenuDivider,
-    useDisclosure, useColorModeValue, Stack, ChakraProvider } from '@chakra-ui/react'
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
+    useDisclosure, useColorModeValue, Stack, ChakraProvider, useColorMode } from '@chakra-ui/react'
+import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons'
 import { ReactNode } from 'react'
 import * as React from 'react'
 import NavbarLogo from './Logo';
@@ -24,6 +24,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
 );
 
 export default function Navbar() {
+  const { colorMode, toggleColorMode } = useColorMode();
     const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
@@ -50,6 +51,11 @@ export default function Navbar() {
             </HStack>
           </HStack>
           <Flex alignItems={'center'}>
+          <Stack direction={'row'} spacing={7}>
+              <Button onClick={toggleColorMode}>
+                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+              </Button>
+          </Stack>
             <Menu>
               <MenuButton
                 as={Button}
