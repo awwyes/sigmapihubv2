@@ -4,6 +4,8 @@ import { extendTheme } from '@chakra-ui/react'
 const theme = extendTheme({
   config: {
     cssVarPrefix: 'ck',
+    initialColorMode: "light",
+    useSystemColorMode: true
   },
   colors: {
     transparent: 'transparent',

@@ -1,15 +1,16 @@
 import { Flex } from "@chakra-ui/react";
-import Main from "../components/Main/Main";
+import dynamic from "next/dynamic";
 import React from "react";
-import Footer from "../components/Footer/Footer";
-import Navbar from "../components/Navbar/Navbar";
+const Footer = dynamic(() => import("../components/Footer/Footer"))
+const NavBar = dynamic(() => import("../components/Navbar/Navbar"))
 
 export default function Home() {
   return (
+    <>
     <Flex direction="column" flex="1">
-      <Navbar />
-      <Main />
-      <Footer />
+      <NavBar />
+      {/* <Footer /> */}
     </Flex>
+    </>
   )
 }
